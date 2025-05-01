@@ -27,14 +27,14 @@ const About = () => {
             className="flex items-center justify-center"
           >
             <div className="relative w-full max-w-md">
-              {/* Profile image placeholder */}
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800">
+              {/* Profile image */}
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800">
                 <img 
-                  src="public/main_pic.jpeg" 
+                  src="/main_pic.jpeg" 
                   alt="Rakesh Ch" 
                   className="w-full h-full object-cover"
                 />
-                </div>
+              </div>
               
               {/* Decorative elements */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-2xl -z-10"></div>
@@ -60,7 +60,7 @@ const About = () => {
           >
             <div className="flex items-center space-x-3 mb-4">
               <User className="h-6 w-6 text-primary" />
-              <h3 className="text-2xl font-bold">Rakesh Ch</h3>
+              <h3 className="text-2xl font-bold">Rakesh Chikatla</h3>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

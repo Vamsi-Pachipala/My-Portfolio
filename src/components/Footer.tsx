@@ -26,7 +26,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* About section */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Rakesh Ch</h3>
+            <h3 className="text-lg font-bold mb-4">Rakesh Chikatla</h3>
             <p className="text-gray-400 mb-6">
               Building tech that bridges innovation with simplicity. Full-Stack Developer, C++ DSA Enthusiast, and Open Source Contributor.
             </p>
