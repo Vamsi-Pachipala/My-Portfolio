@@ -12,11 +12,6 @@ Welcome to my personal developer portfolio! This website showcases who I am, the
 
 🌐 [Visit Portfolio](https://rakesh-chikatla.vercel.app/)
 
----
-
-## 📸 Preview
-
-![Portfolio Screenshot](./screenshot.png)
 
 ---
 
