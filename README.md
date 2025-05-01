@@ -10,7 +10,7 @@ Welcome to my personal developer portfolio! This website showcases who I am, the
 
 ## 🔗 Live Demo
 
-🌐 [Visit Portfolio](https://your-portfolio-link.vercel.app)
+🌐 [Visit Portfolio](https://rakesh-chikatla.vercel.app/)
 
 ---
 
