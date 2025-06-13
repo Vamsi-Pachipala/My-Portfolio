@@ -44,7 +44,7 @@ const Experience = () => {
     {
       title: "Senior Software Engineer",
       company: "BlackDuck",
-      date: "Jun 2025 – Present",
+      date: "May 2025 – Present",
       description: "Leading backend initiatives to build scalable, secure systems. Involved in system design, microservices architecture, and performance tuning using Spring Boot, Redis, Kafka, and Kubernetes.",
       icon: <Briefcase />,
       iconStyle: { background: '#000000', color: '#fff' }
