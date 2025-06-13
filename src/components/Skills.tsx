@@ -14,9 +14,9 @@ const Skills = () => {
   const skills: Skill[] = [
     { name: 'Java', proficiency: 95, category: 'backend' },
     { name: 'Spring Boot', proficiency: 90, category: 'backend' },
-    { name: 'Spring Security', proficiency: 80, category: 'backend' },
+    { name: 'Spring Security', proficiency: 85, category: 'backend' },
     { name: 'REST API Design', proficiency: 90, category: 'backend' },
-    { name: 'Microservices Architecture', proficiency: 80, category: 'backend' },
+    { name: 'Microservices Architecture', proficiency: 85, category: 'backend' },
     { name: 'Redis', proficiency: 80, category: 'backend' },
     { name: 'MySQL', proficiency: 90, category: 'backend' },
     { name: 'Eureka Server', proficiency: 80, category: 'backend' },
@@ -29,13 +29,13 @@ const Skills = () => {
 
     { name: 'Git', proficiency: 90, category: 'tools' },
     { name: 'GitHub', proficiency: 95, category: 'tools' },
-    { name: 'Docker', proficiency: 80, category: 'tools' },
+    { name: 'Docker', proficiency: 85, category: 'tools' },
     { name: 'Kubernetes', proficiency: 80, category: 'tools' },
     { name: 'Postman', proficiency: 90, category: 'tools' },
 
     { name: 'Team Collaboration', proficiency: 90, category: 'soft' },
     { name: 'Strategic Thinking', proficiency: 85, category: 'soft' },
-    { name: 'Communication', proficiency: 80, category: 'soft' },
+    { name: 'Communication', proficiency: 85, category: 'soft' },
     { name: 'Problem Solving', proficiency: 95, category: 'soft' },
   ];
 
@@ -131,13 +131,13 @@ const Skills = () => {
               whileHover={{ scale: 1.1 }}
               className="skill-tag text-xs sm:text-sm"
               style={{
-                backgroundColor: skill.proficiency > 85
-                  ? 'rgba(99, 102, 241, 0.25)'
-                  : 'rgba(79, 70, 229, 0.15)',
-                color: skill.proficiency > 85
-                  ? '#E0F2FE'
-                  : '#A5B4FC',
-              }}              
+                backgroundColor: skill.proficiency >= 85
+                  ? 'rgba(34, 197, 94, 0.2)'      // green-500 bg
+                  : 'rgba(251, 146, 60, 0.2)',    // orange-400 bg
+                color: skill.proficiency >= 85
+                  ? 'rgb(21, 128, 61)'            // green-700 text
+                  : 'rgb(194, 65, 12)'            // orange-700 text
+              }}                          
             >
               {skill.name}
             </motion.div>

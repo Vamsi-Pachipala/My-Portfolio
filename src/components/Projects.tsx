@@ -19,27 +19,28 @@ const Projects = () => {
     {
       id: 1,
       title: 'E-Commerce Microservices Backend',
-      description: 'A scalable e-commerce backend system using microservices, Spring Boot, Redis, Eureka, JWT, and MySQL. Features include authentication, inventory, order, and product management.',
+      description: 'A scalable e-commerce backend system using microservices, Spring Boot, Spring Security, and MySQL. Features include authentication, inventory, order, and product management.',
       image: 'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg',
-      techStack: ['Java', 'Spring Boot', 'Redis', 'JWT', 'MySQL', 'Eureka'],
+      techStack: ['Java', 'Spring Boot', 'Spring Gate Way', 'Spring Security', 'MySQL', 'Eureka'],
       githubLink: 'https://github.com/Vamsi-Pachipala/e-commerce-Microservices',
     },
     {
       id: 2,
-      title: 'IRA Backend APIs (TCS Internal)',
-      description: 'Built and maintained backend services for the IRA & IRA 2.0 connected vehicle apps used by Tata Motors. Developed features like vehicle insights, trip tracking, and health reports.',
-      image: 'https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg',
-      techStack: ['Spring Boot', 'Redis', 'MySQL', 'Spring Security', 'REST API'],
-      githubLink: 'https://github.com/Vamsi-Pachipala',
+      title: 'System Design Patterns & Practices',
+      description: 'A comprehensive collection of scalable system design patterns, HLD/LLD templates, and backend architecture blueprints for real-world applications.',
+      image: 'https://images.pexels.com/photos/3184638/pexels-photo-3184638.jpeg',
+      techStack: ['Java', 'Spring Boot', 'Scalable Architecture', 'Design Patterns', 'HLD/LLD'],
+      githubLink: 'https://github.com/Vamsi-Pachipala/SystemDesign',
     },
     {
       id: 3,
-      title: 'LeetCode Problem Tracker CLI',
-      description: 'A CLI tool that logs and tracks your daily LeetCode activity and progress using GitHub and local storage.',
-      image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg',
-      techStack: ['Java', 'GitHub API', 'File I/O', 'Shell Script'],
-      githubLink: 'https://github.com/Vamsi-Pachipala/LeetCode-CLI-Tracker',
+      title: 'Library Management System',
+      description: 'A complete backend system for managing library operations including book inventory, users, issue/return tracking, and fine calculation — built using Java and Spring Boot.',
+      image: 'https://images.pexels.com/photos/256455/pexels-photo-256455.jpeg',
+      techStack: ['Java', 'Spring Boot', 'REST APIs', 'MySQL'],
+      githubLink: 'https://github.com/Vamsi-Pachipala/LibraryManagementSystem',
     }
+        
   ];
 
   return (
