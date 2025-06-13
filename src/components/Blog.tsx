@@ -41,13 +41,13 @@ const Blog = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">Blog & Writing</h2>
-          <p className="section-subtitle">
+          <h2 className="section-title text-xl sm:text-2xl md:text-3xl">Blog & Writing</h2>
+          <p className="section-subtitle text-sm sm:text-base">
             Sharing my thoughts, experiences, and knowledge with the community.
           </p>
         </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
           {blogPosts.map((post, index) => (
             <motion.div
               key={post.id}
@@ -58,7 +58,7 @@ const Blog = () => {
               className="card overflow-hidden group relative"
             >
               {/* Blog image */}
-              <div className="relative h-48">
+              <div className="relative h-48 sm:h-56 md:h-48">
                 <img 
                   src={post.image} 
                   alt={post.title}
@@ -66,7 +66,7 @@ const Blog = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
-              
+
               {/* Blog content */}
               <div className="p-6 relative">
                 {post.comingSoon && (
@@ -74,28 +74,28 @@ const Blog = () => {
                     Coming Soon
                   </div>
                 )}
-                
-                <h3 className="font-bold text-xl mb-3 group-hover:text-primary transition-colors">
+
+                <h3 className="font-bold text-lg sm:text-xl mb-3 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
-                
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+
+                <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
                   {post.excerpt}
                 </p>
-                
-                <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+
+                <div className="flex flex-wrap items-center justify-between text-sm text-gray-500 dark:text-gray-400 gap-y-2">
                   <div className="flex items-center">
                     <Clock className="h-4 w-4 mr-1" />
                     <span>{post.minutesToRead} min read</span>
                   </div>
-                  
+
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-1" />
                     <span>Vamsi Pachipala</span>
                   </div>
                 </div>
               </div>
-              
+
               <div className="px-6 pb-6 pt-1">
                 <a
                   href="#"
@@ -108,20 +108,20 @@ const Blog = () => {
             </motion.div>
           ))}
         </div>
-        
+
         {/* Subscribe section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="mt-16 card p-8 text-center"
+          className="mt-16 card p-6 sm:p-8 text-center"
         >
-          <h3 className="text-2xl font-bold mb-4">Subscribe for Updates</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+          <h3 className="text-xl sm:text-2xl font-bold mb-4">Subscribe for Updates</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto text-sm sm:text-base">
             Get notified when I publish new articles and tutorials. No spam, just quality content.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"

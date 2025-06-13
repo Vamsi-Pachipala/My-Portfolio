@@ -14,7 +14,7 @@ interface Project {
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-  
+
   const projects: Project[] = [
     {
       id: 1,
@@ -43,7 +43,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" className="py-20 px-4 sm:px-6 bg-gray-50 dark:bg-gray-900">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,7 +56,7 @@ const Projects = () => {
             A showcase of my backend development projects and systems.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {projects.map((project, index) => (
             <motion.div
@@ -70,14 +70,14 @@ const Projects = () => {
               onMouseLeave={() => setHoveredProject(null)}
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-60 sm:h-48 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-                
+
                 {/* Tech stack overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
@@ -90,18 +90,18 @@ const Projects = () => {
                   ))}
                 </div>
               </div>
-              
+
               {/* Project Info */}
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm sm:text-base">
                   {project.description}
                 </p>
-                
+
                 {/* Links */}
-                <div className="flex space-x-4">
+                <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
                   <a 
                     href={project.githubLink} 
                     target="_blank" 
@@ -137,7 +137,7 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
-        
+
         <div className="flex justify-center mt-16">
           <a 
             href="https://github.com/Vamsi-Pachipala" 

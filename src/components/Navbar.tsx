@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-scroll';
+import { animateScroll as scroll, scroller } from 'react-scroll';
 import { Menu, X, Moon, Sun, Code } from 'lucide-react';
 import { ThemeContext } from '../context/ThemeContext';
 
@@ -27,27 +27,38 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile nav is open
   useEffect(() => {
-    const handleClickOutside = () => {
-      if (isOpen) setIsOpen(false);
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
     };
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isOpen]);
+
+  // Auto-close mobile nav when user scrolls manually
+  useEffect(() => {
+    const handleScrollCloseMenu = () => {
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('scroll', handleScrollCloseMenu);
+    return () => window.removeEventListener('scroll', handleScrollCloseMenu);
   }, [isOpen]);
 
   return (
-    <header 
+    <header
       className={`fixed top-0 w-full z-40 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md shadow-md' 
+        isScrolled
+          ? 'bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md shadow-md'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:py-6">
           {/* Logo */}
-          <div 
-            className="flex items-center space-x-2 text-xl font-bold text-primary"
+          <div
+            className="flex items-center space-x-2 text-xl font-bold text-primary cursor-pointer"
             onClick={(e) => e.stopPropagation()}
           >
             <Code className="h-6 w-6" />
@@ -57,18 +68,19 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-2">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
-                to={link.to}
-                spy={true}
-                smooth={true}
-                offset={link.offset}
-                duration={500}
-                activeClass="nav-link-active"
-                className="nav-link"
+                onClick={() =>
+                  scroller.scrollTo(link.to, {
+                    smooth: true,
+                    offset: link.offset,
+                    duration: 500,
+                  })
+                }
+                className="nav-link cursor-pointer"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -105,26 +117,29 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
+        id="mobile-nav"
         className={`md:hidden fixed inset-0 z-30 bg-white dark:bg-dark-bg transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
-        onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-6 text-xl">
+        <div className="flex flex-col items-center justify-center h-full space-y-6 text-lg px-4">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.name}
-              to={link.to}
-              spy={true}
-              smooth={true}
-              offset={link.offset}
-              duration={500}
-              activeClass="nav-link-active"
-              className="nav-link"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false); // Close first
+                setTimeout(() => {
+                  scroller.scrollTo(link.to, {
+                    smooth: true,
+                    offset: link.offset,
+                    duration: 500,
+                  });
+                }, 300); // Wait for menu to animate out
+              }}
+              className="w-full text-center py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
             >
               {link.name}
-            </Link>
+            </a>
           ))}
         </div>
       </div>

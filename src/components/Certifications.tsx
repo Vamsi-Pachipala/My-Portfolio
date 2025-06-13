@@ -55,13 +55,13 @@ const Certifications = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">Certifications</h2>
-          <p className="section-subtitle">
+          <h2 className="section-title text-xl sm:text-2xl md:text-3xl">Certifications</h2>
+          <p className="section-subtitle text-sm sm:text-base">
             Professional certifications and achievements.
           </p>
         </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
           {certifications.map((cert, index) => (
             <motion.div
               key={cert.id}
@@ -72,7 +72,7 @@ const Certifications = () => {
               whileHover={{ y: -5 }}
               className="card overflow-hidden"
             >
-              <div className="relative h-40">
+              <div className="relative h-40 sm:h-48 md:h-40">
                 <img 
                   src={cert.image} 
                   alt={cert.title}
@@ -83,12 +83,12 @@ const Certifications = () => {
                   <Award className="h-5 w-5" />
                 </div>
               </div>
-              
-              <div className="p-5">
-                <h3 className="font-bold text-lg mb-1">{cert.title}</h3>
+
+              <div className="p-4 sm:p-5">
+                <h3 className="font-bold text-base sm:text-lg mb-1">{cert.title}</h3>
                 <p className="text-primary text-sm mb-1">{cert.issuer}</p>
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{cert.date}</p>
-                
+
                 {cert.link && (
                   <a 
                     href={cert.link} 

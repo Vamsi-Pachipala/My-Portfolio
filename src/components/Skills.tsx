@@ -12,7 +12,6 @@ const Skills = () => {
   const [filter, setFilter] = useState<string>('all');
 
   const skills: Skill[] = [
-    // 🔙 Backend
     { name: 'Java', proficiency: 95, category: 'backend' },
     { name: 'Spring Boot', proficiency: 90, category: 'backend' },
     { name: 'Spring Security', proficiency: 80, category: 'backend' },
@@ -22,30 +21,25 @@ const Skills = () => {
     { name: 'MySQL', proficiency: 90, category: 'backend' },
     { name: 'Eureka Server', proficiency: 80, category: 'backend' },
 
-    // 🧠 Programming
     { name: 'Data Structures', proficiency: 95, category: 'programming' },
     { name: 'Algorithms', proficiency: 90, category: 'programming' },
     { name: 'Multithreading', proficiency: 80, category: 'programming' },
     { name: 'OOPs', proficiency: 90, category: 'programming' },
     { name: 'System Design', proficiency: 85, category: 'programming' },
 
-    // 🛠️ Tools
     { name: 'Git', proficiency: 90, category: 'tools' },
     { name: 'GitHub', proficiency: 95, category: 'tools' },
     { name: 'Docker', proficiency: 80, category: 'tools' },
     { name: 'Kubernetes', proficiency: 80, category: 'tools' },
     { name: 'Postman', proficiency: 90, category: 'tools' },
 
-    // 💬 Soft Skills
     { name: 'Team Collaboration', proficiency: 90, category: 'soft' },
     { name: 'Strategic Thinking', proficiency: 85, category: 'soft' },
     { name: 'Communication', proficiency: 80, category: 'soft' },
     { name: 'Problem Solving', proficiency: 95, category: 'soft' },
   ];
 
-  const filteredSkills = filter === 'all'
-    ? skills
-    : skills.filter(skill => skill.category === filter);
+  const filteredSkills = filter === 'all' ? skills : skills.filter(skill => skill.category === filter);
 
   const categories = [
     { id: 'all', name: 'All Skills', icon: <Terminal className="h-5 w-5" /> },
@@ -56,7 +50,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20 px-4 sm:px-6">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,7 +70,7 @@ const Skills = () => {
             <motion.button
               key={category.id}
               onClick={() => setFilter(category.id)}
-              className={`flex items-center px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+              className={`flex items-center px-4 py-2 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
                 filter === category.id
                   ? 'bg-primary text-white'
                   : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
@@ -102,8 +96,8 @@ const Skills = () => {
               className="card p-6"
             >
               <div className="flex justify-between items-center mb-3">
-                <h3 className="font-bold text-lg">{skill.name}</h3>
-                <span className="text-primary font-medium">{skill.proficiency}%</span>
+                <h3 className="font-bold text-base sm:text-lg">{skill.name}</h3>
+                <span className="text-primary font-medium text-sm sm:text-base">{skill.proficiency}%</span>
               </div>
 
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
@@ -125,7 +119,7 @@ const Skills = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center mt-12"
+          className="flex flex-wrap justify-center mt-12 gap-2"
         >
           {filteredSkills.map((skill, index) => (
             <motion.div
@@ -135,14 +129,14 @@ const Skills = () => {
               transition={{ duration: 0.3, delay: index * 0.05 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.1 }}
-              className="skill-tag"
+              className="skill-tag text-xs sm:text-sm"
               style={{
                 backgroundColor: skill.proficiency > 85
-                  ? 'rgba(99, 102, 241, 0.25)'     // Indigo-500 (primary)
-                  : 'rgba(79, 70, 229, 0.15)',     // Indigo-600 muted
+                  ? 'rgba(99, 102, 241, 0.25)'
+                  : 'rgba(79, 70, 229, 0.15)',
                 color: skill.proficiency > 85
-                  ? '#E0F2FE'                     // Light cyan text for contrast
-                  : '#A5B4FC',                    // Soft indigo text
+                  ? '#E0F2FE'
+                  : '#A5B4FC',
               }}              
             >
               {skill.name}

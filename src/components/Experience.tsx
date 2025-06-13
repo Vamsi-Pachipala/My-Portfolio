@@ -52,7 +52,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20">
+    <section id="experience" className="py-20 px-4 sm:px-6">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,13 +87,13 @@ const Experience = () => {
               iconStyle={exp.iconStyle}
               icon={exp.icon}
             >
-              <h3 className="vertical-timeline-element-title text-xl font-bold">
+              <h3 className="vertical-timeline-element-title text-lg sm:text-xl font-bold">
                 {exp.title}
               </h3>
               <h4 className="vertical-timeline-element-subtitle text-primary mt-1">
                 {exp.company}
               </h4>
-              <p className="text-gray-600 dark:text-gray-300 mt-3">
+              <p className="text-gray-600 dark:text-gray-300 mt-3 text-sm sm:text-base">
                 {exp.description}
               </p>
             </VerticalTimelineElement>
