@@ -32,7 +32,7 @@ const Certifications = () => {
       id: 3,
       title: "Low-Level Design: Basics to Advanced",
       issuer: "Udemy",
-      date: "2024",
+      date: "2025",
       image: "https://udemy-certificate.s3.amazonaws.com/image/UC-9731a583-f31d-48bd-a19f-64ca93519b26.jpg?v=1747399962000",
       link: "https://www.udemy.com/certificate/UC-9731a583-f31d-48bd-a19f-64ca93519b26/"
     },
@@ -40,7 +40,7 @@ const Certifications = () => {
       id: 4,
       title: "SQL: Basics to Advanced",
       issuer: "Udemy",
-      date: "2024",
+      date: "2025",
       image: "https://udemy-certificate.s3.amazonaws.com/image/UC-f695efc4-6b2a-45b0-9e95-1cca76b96e88.jpg?v=1747399438000",
       link: "https://www.udemy.com/certificate/UC-f695efc4-6b2a-45b0-9e95-1cca76b96e88/"
     }
