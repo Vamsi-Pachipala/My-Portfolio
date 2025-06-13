@@ -14,35 +14,35 @@ const Certifications = () => {
   const certifications: Certification[] = [
     {
       id: 1,
-      title: "Project Completion Certificate",
-      issuer: "Infosys Springboard",
-      date: "January 2025",
-      image: "https://images.pexels.com/photos/5926393/pexels-photo-5926393.jpeg",
-      link: "https://drive.google.com/file/d/1U5nzPVXN9MIUyZb55pcLus6VyaNoYF_F/view"
+      title: "Microservices with Spring Boot, Docker & Kubernetes",
+      issuer: "Udemy",
+      date: "2024",
+      image: "https://udemy-certificate.s3.amazonaws.com/image/UC-16eb506f-7792-44ca-ac36-176fdf7a2c7e.jpg?v=1720852885000",
+      link: "https://www.udemy.com/certificate/UC-16eb506f-7792-44ca-ac36-176fdf7a2c7e/"
     },
     {
       id: 2,
-      title: "Open Source Contributor",
-      issuer: "GirlScript Summer of Code",
-      date: "November 2024",
-      image: "https://images.pexels.com/photos/6476254/pexels-photo-6476254.jpeg",
-      link: "https://drive.google.com/file/d/1ZYoU9hmKT3Pd-dzcD77uWY6YRxL_N-ez/view"
+      title: "Java 7 & Java 8: New Features, Lambdas & Streams",
+      issuer: "Udemy",
+      date: "2024",
+      image: "https://udemy-certificate.s3.amazonaws.com/image/UC-838a4d52-5e3d-4341-b8d7-4fa49ee2d85c.jpg?v=1721238888000",
+      link: "https://udemy.com/certificate/UC-838a4d52-5e3d-4341-b8d7-4fa49ee2d85c"
     },
     {
       id: 3,
-      title: "Career Essentials in GitHub Professional Certificate",
-      issuer: "GitHub",
-      date: "September 2024",
-      image: "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
-      link: "https://www.linkedin.com/learning/certificates/94070231fefd4403cfaf757176db5fee76d6fe7d7148715bf1cf4efc7466aa20"
+      title: "Low-Level Design: Basics to Advanced",
+      issuer: "Udemy",
+      date: "2024",
+      image: "https://udemy-certificate.s3.amazonaws.com/image/UC-9731a583-f31d-48bd-a19f-64ca93519b26.jpg?v=1747399962000",
+      link: "https://www.udemy.com/certificate/UC-9731a583-f31d-48bd-a19f-64ca93519b26/"
     },
     {
       id: 4,
-      title: "C++ Advanced Programming",
-      issuer: "Coursera",
-      date: "October 2023",
-      image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
-      link: "#cert-4"
+      title: "SQL: Basics to Advanced",
+      issuer: "Udemy",
+      date: "2024",
+      image: "https://udemy-certificate.s3.amazonaws.com/image/UC-f695efc4-6b2a-45b0-9e95-1cca76b96e88.jpg?v=1747399438000",
+      link: "https://www.udemy.com/certificate/UC-f695efc4-6b2a-45b0-9e95-1cca76b96e88/"
     }
   ];
 

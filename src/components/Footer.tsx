@@ -14,10 +14,10 @@ const Footer = () => {
   ];
   
   const socialLinks = [
-    { name: 'GitHub', url: 'https://github.com/chikatlarakesh' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/rakeshchikatla/' },
-    { name: 'Email', url: 'mailto:rakeshchikatla12@gmail.com' },
-    { name: 'Linktree', url: 'https://linktr.ee/rakeshchikatla' },
+    { name: 'GitHub', url: 'https://github.com/Vamsi-Pachipala' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/vamsi-pachipala-98a338209/' },
+    { name: 'Email', url: 'mailto:vamsipachipala243@gmail.com' },
+    { name: 'Portfolio', url: 'https://vamsip.dev' }
   ];
 
   return (
@@ -26,12 +26,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* About section */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Rakesh Chikatla</h3>
+            <h3 className="text-lg font-bold mb-4">Vamsi Pachipala</h3>
             <p className="text-gray-400 mb-6">
-              Building tech that bridges innovation with simplicity. Full-Stack Developer, C++ DSA Enthusiast, and Open Source Contributor.
+              Backend Developer | Java & Spring Boot Enthusiast | System Design, DSA & Microservices Practitioner.
             </p>
             <p className="text-gray-500">
-              Based in Visakhapatnam, India
+              Based in Bengaluru, India
             </p>
           </div>
           
@@ -79,11 +79,11 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-500 text-sm">
-            &copy; {currentYear} Rakesh Ch. All rights reserved.
+            &copy; {currentYear} Vamsi Pachipala. All rights reserved.
           </p>
           
           <p className="text-gray-500 text-sm flex items-center">
-            <span>Built with ❤️ by Rakesh Ch</span>
+            <span>Built with ❤️ by Vamsi Pachipala</span>
             <span className="mx-2">|</span>
             <span>Powered by React & TailwindCSS</span>
           </p>

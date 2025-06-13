@@ -27,20 +27,17 @@ const About = () => {
             className="flex items-center justify-center"
           >
             <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
-              {/* Profile image */}
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800">
                 <img 
                   src="/main_pic.jpeg" 
-                  alt="Rakesh Ch" 
+                  alt="Vamsi Pachipala" 
                   className="w-full h-full object-cover"
                 />
               </div>
 
-              {/* Decorative elements (hidden on mobile) */}
               <div className="absolute -bottom-6 -right-6 w-20 h-20 md:w-32 md:h-32 bg-primary/10 rounded-2xl -z-10 hidden md:block"></div>
               <div className="absolute -top-6 -left-6 w-20 h-20 md:w-32 md:h-32 bg-accent/10 rounded-2xl -z-10 hidden md:block"></div>
 
-              {/* Floating badges (hidden on mobile) */}
               <div className="absolute -top-4 -right-4 bg-white dark:bg-dark-card shadow-lg rounded-full p-2 md:p-3 hidden md:block">
                 <GraduationCap className="h-6 w-6 md:h-8 md:w-8 text-primary" />
               </div>
@@ -60,28 +57,28 @@ const About = () => {
           >
             <div className="flex items-center space-x-3 mb-4">
               <User className="h-6 w-6 text-primary" />
-              <h3 className="text-2xl font-bold">Rakesh Chikatla</h3>
+              <h3 className="text-2xl font-bold">Vamsi Pachipala</h3>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="card p-4">
                 <h4 className="font-semibold mb-1">Role</h4>
-                <p className="text-gray-600 dark:text-gray-300">Final Year IT Student</p>
+                <p className="text-gray-600 dark:text-gray-300">Senior Software Engineer at BlackDuck</p>
               </div>
 
               <div className="card p-4">
                 <h4 className="font-semibold mb-1">College</h4>
-                <p className="text-gray-600 dark:text-gray-300">GVP College of Engineering</p>
+                <p className="text-gray-600 dark:text-gray-300">Gayatri Vidya Parishad College of Engineering</p>
               </div>
 
               <div className="card p-4">
                 <h4 className="font-semibold mb-1">Personality</h4>
-                <p className="text-gray-600 dark:text-gray-300">ENTJ – Assertive, Strategic</p>
+                <p className="text-gray-600 dark:text-gray-300">Coding passionate, System Design enthusiast, Logical thinker, Quick learner</p>
               </div>
 
               <div className="card p-4">
                 <h4 className="font-semibold mb-1">Interests</h4>
-                <p className="text-gray-600 dark:text-gray-300">Competitive Programming, Open Source</p>
+                <p className="text-gray-600 dark:text-gray-300">Backend Development, Microservices, System Design</p>
               </div>
             </div>
 
@@ -91,15 +88,15 @@ const About = () => {
                 <h3 className="text-xl font-bold">Goal</h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                "To build scalable solutions that make technology accessible to everyone."
+                "Get into a top-tier product-based company and build seamless, scalable systems."
               </p>
 
               <p className="text-gray-700 dark:text-gray-300 mb-8">
-                I'm passionate about solving complex problems through code. As a full-stack developer and competitive programmer, I strive to create efficient, user-friendly applications that make a real impact.
+                As a backend developer with a strong interest in system design and microservices architecture, I’m passionate about writing clean, efficient, and production-grade code. I enjoy building APIs, solving performance issues, and contributing to scalable architectures.
               </p>
 
               <a 
-                href="https://www.linkedin.com/in/rakeshchikatla/" 
+                href="https://www.linkedin.com/in/vamsi-pachipala-98a338209/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center"

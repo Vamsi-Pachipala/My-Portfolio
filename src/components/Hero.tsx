@@ -10,10 +10,10 @@ const Hero = () => {
   
   const [text] = useTypewriter({
     words: [
-      "Hi, I'm Rakesh Chikatla 👋",
-      "Competitive Programmer",
-      "Full-Stack Developer",
-      "Open Source Contributor"
+      "Hi, I'm Vamsi Pachipala 👋",
+      "Backend Developer",
+      "Microservices Architect",
+      "System Design Enthusiast"
     ],
     loop: true,
     delaySpeed: 2000,
@@ -44,12 +44,12 @@ const Hero = () => {
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Crafting scalable solutions that simplify technology for everyone.
+            Building scalable backend systems with Spring Boot, Microservices, and clean architecture.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <a 
-              href="https://github.com/chikatlarakesh" 
+              href="https://github.com/Vamsi-Pachipala" 
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-primary"
@@ -59,7 +59,7 @@ const Hero = () => {
             </a>
             
             <a 
-              href="https://drive.google.com/file/d/1XuHwO-XVwgSozzueigIi4G4_Mw3nrzB0/view?usp=sharing" 
+              href="https://drive.google.com/file/d/19yEeo4R3P_AKTT-GkqNYNo-bD0O1fcJW" 
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"

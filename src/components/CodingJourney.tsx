@@ -3,7 +3,7 @@ import { Code, Github, TrendingUp, Hash, CalendarDays } from 'lucide-react';
 
 const CodingJourney = () => {
   const stats = [
-    { label: 'Problems Solved', value: '600+', icon: <Hash className="h-6 w-6 text-primary" /> },
+    { label: 'Problems Solved', value: '1000+', icon: <Hash className="h-6 w-6 text-primary" /> },
     { label: 'Streak Days', value: '160+', icon: <CalendarDays className="h-6 w-6 text-accent" /> },
     { label: 'Contests', value: '25+', icon: <TrendingUp className="h-6 w-6 text-accent2" /> },
     { label: 'GitHub Repos', value: '20+', icon: <Github className="h-6 w-6 text-primary" /> },
@@ -12,21 +12,21 @@ const CodingJourney = () => {
   const platforms = [
     {
       name: 'LeetCode',
-      username: 'Rakesh_chikatla',
-      link: 'https://leetcode.com/u/Rakesh_chikatla/',
-      highlight: '50-Day Challenge Completed',
+      username: 'Vamsi_Pachipala',
+      link: 'https://leetcode.com/u/vamsipachipala/',
+      highlight: 'Daily Coding & 1000+ Problems Solved',
     },
     {
       name: 'GitHub',
-      username: '@chikatlarakesh',
-      link: 'https://github.com/chikatlarakesh',
-      highlight: 'Open Source Contributor',
+      username: '@Vamsi-Pachipala',
+      link: 'https://github.com/Vamsi-Pachipala',
+      highlight: 'System Design & Spring Boot Projects',
     },
     {
       name: 'GeeksforGeeks',
-      username: 'Rakesh_chikatla',
-      link: 'https://www.geeksforgeeks.org/user/rakesh_chikatla/',
-      highlight: '160 Days Challenge (#gfg160 #geekstreak2024)',
+      username: 'Vamsi_Pachipala',
+      link: 'https://www.geeksforgeeks.org/user/vamsiplaty/',
+      highlight: '160+ Days Streak (#gfg160)',
     },
   ];
 
@@ -41,7 +41,7 @@ const CodingJourney = () => {
         >
           <h2 className="section-title">My Coding Journey</h2>
           <p className="section-subtitle">
-            Tracking my progress in competitive programming and coding challenges.
+            Tracking my progress in backend development and competitive programming.
           </p>
         </motion.div>
 
@@ -119,7 +119,7 @@ const CodingJourney = () => {
         >
           <h3 className="text-2xl font-bold mb-4">Activity Heatmap</h3>
           <iframe
-            src="https://leetcard.jacoblin.cool/Rakesh_chikatla?theme=dark&font=Fira%20Code&ext=heatmap"
+            src="https://leetcard.jacoblin.cool/VamsiPachipala?theme=dark&font=Fira%20Code&ext=heatmap"
             title="LeetCode Activity Heatmap"
             className="w-full h-80 border rounded-lg"
             loading="lazy"

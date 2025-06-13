@@ -1,46 +1,54 @@
 import { motion } from 'framer-motion';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { Briefcase, Code, School, Briefcase as Work } from 'lucide-react';
+import { Briefcase, Code, School } from 'lucide-react';
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
 const Experience = () => {
   const { theme } = useContext(ThemeContext);
-  
+
   const experiences = [
     {
-      title: "B.Tech in Information Technology",
+      title: "B.Tech in Mechanical Engineering",
       company: "Gayatri Vidya Parishad College of Engineering",
-      date: "2022 - 2026 (Currently pursuing)",
-      description: "Studying Information Technology with focus on software development, data structures, algorithms, and web technologies.",
+      date: "2020 – 2023",
+      description: "Graduated with 8.61 CGPA. Focused on Data Structures, OOPs, Networking, and Java development.",
       icon: <School />,
       iconStyle: { background: '#9C27B0', color: '#fff' }
     },
     {
-      title: "Junior Developer Intern",
-      company: "Namoona 3D Labs",
-      date: "Dec 2024 - Jan 2025",
-      description: "Worked on developing and optimizing 3D modeling tools and applications.",
-      icon: <Work />,
-      iconStyle: { background: '#FF9800', color: '#fff' }
-    },
-    {
-      title: "Project Intern",
-      company: "Infosys Springboard",
-      date: "Oct 2024 - Dec 2024",
-      description: "Contributed to projects focusing on web technologies and software development.",
-      icon: <Work />,
+      title: "E-Commerce Microservices Project",
+      company: "Personal Project",
+      date: "Apr 2024",
+      description: "Designed scalable backend with Spring Boot, Eureka, Redis, JWT Auth, and MySQL. Focused on modular microservices, indexing, caching, and pagination.",
+      icon: <Code />,
       iconStyle: { background: '#2196F3', color: '#fff' }
     },
     {
-      title: "Campus Ambassador & Contributor",
-      company: "GSSoC (GirlScript Summer of Code)",
-      date: "Oct 2024 - Nov 2024",
-      description: "Promoted open source contribution at campus. Contributed to multiple projects and mentored junior developers.",
-      icon: <School />,
+      title: "Competitive Programming & Achievements",
+      company: "LeetCode, GFG, CodeVita",
+      date: "Ongoing",
+      description: "Solved 1000+ DSA problems. CodeVita Global Rank #700 (R1), #1347 (R2). Ranked 54 in ECET. Active on GitHub & LeetCode.",
+      icon: <Code />,
       iconStyle: { background: '#4CAF50', color: '#fff' }
     },
+    {
+      title: "Backend Developer – IRA & IRA 2.0",
+      company: "Tata Consultancy Services (TCS)",
+      date: "Jun 2023 – May 2025",
+      description: "Worked on connected vehicle platform serving 10M+ hits/day. Built APIs for vehicle insights, trip history, charge limits, and health reports. Integrated with Redis, MySQL, and CRM systems.",
+      icon: <Briefcase />,
+      iconStyle: { background: '#FF9800', color: '#fff' }
+    },
+    {
+      title: "Senior Software Engineer",
+      company: "BlackDuck",
+      date: "Jun 2025 – Present",
+      description: "Leading backend initiatives to build scalable, secure systems. Involved in system design, microservices architecture, and performance tuning using Spring Boot, Redis, Kafka, and Kubernetes.",
+      icon: <Briefcase />,
+      iconStyle: { background: '#000000', color: '#fff' }
+    }
   ];
 
   return (
@@ -54,26 +62,26 @@ const Experience = () => {
         >
           <h2 className="section-title">Experience & Education</h2>
           <p className="section-subtitle">
-            My professional journey and academic background.
+            My professional journey, academic milestones, and engineering achievements.
           </p>
         </motion.div>
-        
+
         <VerticalTimeline lineColor={theme === 'dark' ? '#2d2d2d' : '#e5e5e5'}>
           {experiences.map((exp, index) => (
             <VerticalTimelineElement
               key={index}
               className="vertical-timeline-element"
-              contentStyle={{ 
+              contentStyle={{
                 background: theme === 'dark' ? '#1E1E1E' : '#fff',
-                boxShadow: theme === 'dark' 
-                  ? '0 3px 10px rgba(0, 0, 0, 0.4)' 
+                boxShadow: theme === 'dark'
+                  ? '0 3px 10px rgba(0, 0, 0, 0.4)'
                   : '0 3px 10px rgba(0, 0, 0, 0.1)',
                 borderRadius: '12px'
               }}
-              contentArrowStyle={{ 
-                borderRight: theme === 'dark' 
-                  ? '7px solid #1E1E1E' 
-                  : '7px solid #fff' 
+              contentArrowStyle={{
+                borderRight: theme === 'dark'
+                  ? '7px solid #1E1E1E'
+                  : '7px solid #fff'
               }}
               date={exp.date}
               iconStyle={exp.iconStyle}

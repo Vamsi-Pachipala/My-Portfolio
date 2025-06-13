@@ -21,23 +21,16 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = () => {
       if (isOpen) setIsOpen(false);
     };
-
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isOpen]);
@@ -58,7 +51,7 @@ const Navbar = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <Code className="h-6 w-6" />
-            <span>Rakesh Chikatla</span>
+            <span>Vamsi Pachipala</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -79,7 +72,7 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Theme Toggle + Mobile Menu Button */}
+          {/* Theme Toggle + Mobile Button */}
           <div className="flex items-center space-x-3">
             <button
               onClick={(e) => {
@@ -96,7 +89,6 @@ const Navbar = () => {
               )}
             </button>
 
-            {/* Mobile menu button */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -105,11 +97,7 @@ const Navbar = () => {
               className="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               aria-label="Toggle menu"
             >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>

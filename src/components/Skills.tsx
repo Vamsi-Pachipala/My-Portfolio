@@ -5,49 +5,52 @@ import { Code, Server, Terminal, Wrench, Users } from 'lucide-react';
 interface Skill {
   name: string;
   proficiency: number;
-  category: 'frontend' | 'backend' | 'programming' | 'tools' | 'soft';
+  category: 'backend' | 'programming' | 'tools' | 'soft';
 }
 
 const Skills = () => {
   const [filter, setFilter] = useState<string>('all');
-  
+
   const skills: Skill[] = [
-    { name: 'HTML', proficiency: 90, category: 'frontend' },
-    { name: 'CSS', proficiency: 85, category: 'frontend' },
-    { name: 'JavaScript', proficiency: 90, category: 'frontend' },
-    { name: 'React', proficiency: 85, category: 'frontend' },
-    { name: 'Tailwind CSS', proficiency: 80, category: 'frontend' },
-    
-    { name: 'Node.js', proficiency: 80, category: 'backend' },
-    { name: 'Express.js', proficiency: 85, category: 'backend' },
-    { name: 'MongoDB', proficiency: 75, category: 'backend' },
-    { name: 'REST API', proficiency: 85, category: 'backend' },
-    
-    { name: 'C++', proficiency: 95, category: 'programming' },
-    { name: 'Data Structures', proficiency: 90, category: 'programming' },
+    // 🔙 Backend
+    { name: 'Java', proficiency: 95, category: 'backend' },
+    { name: 'Spring Boot', proficiency: 90, category: 'backend' },
+    { name: 'Spring Security', proficiency: 80, category: 'backend' },
+    { name: 'REST API Design', proficiency: 90, category: 'backend' },
+    { name: 'Microservices Architecture', proficiency: 80, category: 'backend' },
+    { name: 'Redis', proficiency: 80, category: 'backend' },
+    { name: 'MySQL', proficiency: 90, category: 'backend' },
+    { name: 'Eureka Server', proficiency: 80, category: 'backend' },
+
+    // 🧠 Programming
+    { name: 'Data Structures', proficiency: 95, category: 'programming' },
     { name: 'Algorithms', proficiency: 90, category: 'programming' },
-    { name: 'Java', proficiency: 70, category: 'programming' },
-    
-    { name: 'Git', proficiency: 85, category: 'tools' },
-    { name: 'GitHub', proficiency: 90, category: 'tools' },
-    { name: 'VSCode', proficiency: 90, category: 'tools' },
-    { name: 'Postman', proficiency: 80, category: 'tools' },
-    
-    { name: 'Leadership', proficiency: 85, category: 'soft' },
-    { name: 'Strategic Thinking', proficiency: 90, category: 'soft' },
+    { name: 'Multithreading', proficiency: 80, category: 'programming' },
+    { name: 'OOPs', proficiency: 90, category: 'programming' },
+    { name: 'System Design', proficiency: 85, category: 'programming' },
+
+    // 🛠️ Tools
+    { name: 'Git', proficiency: 90, category: 'tools' },
+    { name: 'GitHub', proficiency: 95, category: 'tools' },
+    { name: 'Docker', proficiency: 80, category: 'tools' },
+    { name: 'Kubernetes', proficiency: 80, category: 'tools' },
+    { name: 'Postman', proficiency: 90, category: 'tools' },
+
+    // 💬 Soft Skills
+    { name: 'Team Collaboration', proficiency: 90, category: 'soft' },
+    { name: 'Strategic Thinking', proficiency: 85, category: 'soft' },
     { name: 'Communication', proficiency: 80, category: 'soft' },
-    { name: 'Teamwork', proficiency: 85, category: 'soft' },
+    { name: 'Problem Solving', proficiency: 95, category: 'soft' },
   ];
-  
-  const filteredSkills = filter === 'all' 
-    ? skills 
+
+  const filteredSkills = filter === 'all'
+    ? skills
     : skills.filter(skill => skill.category === filter);
-  
+
   const categories = [
     { id: 'all', name: 'All Skills', icon: <Terminal className="h-5 w-5" /> },
-    { id: 'frontend', name: 'Frontend', icon: <Code className="h-5 w-5" /> },
     { id: 'backend', name: 'Backend', icon: <Server className="h-5 w-5" /> },
-    { id: 'programming', name: 'Programming', icon: <Terminal className="h-5 w-5" /> },
+    { id: 'programming', name: 'Programming', icon: <Code className="h-5 w-5" /> },
     { id: 'tools', name: 'Tools', icon: <Wrench className="h-5 w-5" /> },
     { id: 'soft', name: 'Soft Skills', icon: <Users className="h-5 w-5" /> },
   ];
@@ -63,10 +66,10 @@ const Skills = () => {
         >
           <h2 className="section-title">My Skills</h2>
           <p className="section-subtitle">
-            The technologies and skills I've acquired throughout my journey.
+            The technologies and skills I’ve mastered as a backend engineer.
           </p>
         </motion.div>
-        
+
         {/* Category filter */}
         <div className="flex flex-wrap justify-center gap-2 mt-10 mb-12">
           {categories.map((category) => (
@@ -86,8 +89,8 @@ const Skills = () => {
             </motion.button>
           ))}
         </div>
-        
-        {/* Skills grid */}
+
+        {/* Skills Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredSkills.map((skill, index) => (
             <motion.div
@@ -102,7 +105,7 @@ const Skills = () => {
                 <h3 className="font-bold text-lg">{skill.name}</h3>
                 <span className="text-primary font-medium">{skill.proficiency}%</span>
               </div>
-              
+
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                 <motion.div
                   className="bg-primary h-2.5 rounded-full"
@@ -115,8 +118,8 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-        
-        {/* Skills cloud as alternative view */}
+
+        {/* Skill Cloud */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -134,13 +137,13 @@ const Skills = () => {
               whileHover={{ scale: 1.1 }}
               className="skill-tag"
               style={{
-                backgroundColor: skill.proficiency > 85 
-                  ? 'rgba(0, 191, 255, 0.2)' 
-                  : 'rgba(0, 191, 255, 0.1)',
-                color: skill.proficiency > 85 
-                  ? 'rgb(0, 90, 120)' 
-                  : 'rgb(0, 120, 160)',
-              }}
+                backgroundColor: skill.proficiency > 85
+                  ? 'rgba(99, 102, 241, 0.25)'     // Indigo-500 (primary)
+                  : 'rgba(79, 70, 229, 0.15)',     // Indigo-600 muted
+                color: skill.proficiency > 85
+                  ? '#E0F2FE'                     // Light cyan text for contrast
+                  : '#A5B4FC',                    // Soft indigo text
+              }}              
             >
               {skill.name}
             </motion.div>

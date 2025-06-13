@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Linkedin, Github, ExternalLink } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Linkedin, Github } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -19,66 +19,60 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
     if (!formRef.current) return;
-  
-    console.log('Form data:', formData);
-  
+
     try {
-      // Step 1: Send message to YOU (Contact Us template)
       const result1 = await emailjs.sendForm(
-        'service_8i9055l',
-        'template_8uoopir', // Contact Us Template
+        'service_7p6bl0r',
+        'template_9b7epea',
         formRef.current,
-        '0xikwWBSA0DIrVgUH'
+        'pv7Q47LC-sbtRx9bx'
       );
-      console.log('Message sent to me:', result1.status, result1.text);
-  
-      // Step 2: Send Auto-Reply to USER (Auto-Reply template)
+
       const result2 = await emailjs.send(
-        'service_8i9055l',
-        'template_dv6g1pu', // Auto-Reply Template
+        'service_7p6bl0r',
+        'template_1jq0mnw',
         {
-          from_name: formData.user_name,   // User's name
-          reply_to: formData.user_email,   // User's email
-          to_email: formData.user_email,   // Send to the user
-          message: formData.message,       // User's message
-          from_email: 'rakeshchikatla12@gmail.com',  // Your email
+          from_name: formData.user_name,
+          reply_to: formData.user_email,
+          to_email: formData.user_email,
+          message: formData.message,
+          from_email: 'vamsipachipala243@gmail.com',
         },
-        '0xikwWBSA0DIrVgUH'
+        'pv7Q47LC-sbtRx9bx'
       );
-      console.log('Auto-reply sent to user:', result2.status, result2.text);
-  
-      // Check if both results were successful
+      
+
       if (result1.status === 200 && result2.status === 200) {
         alert('Thank you for your message! A confirmation email has been sent to you.');
         setFormData({ user_name: '', user_email: '', subject: '', message: '' });
       } else {
-        console.error('Error in sending emails. Check your EmailJS configurations.');
+        console.log('Auto-reply result:', result2);
         alert('Failed to send message. Please try again later.');
       }
     } catch (error) {
-      console.error('Error occurred during email sending process:', error);
+      console.error('EmailJS error:', error);
       alert('Failed to send message. Please try again later.');
     }
   };
+
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6 text-primary" />,
       title: 'Email',
-      value: 'rakeshchikatla12@gmail.com',
-      link: 'mailto:rakeshchikatla12@gmail.com'
+      value: 'vamsipachipala243@gmail.com',
+      link: 'mailto:vamsipachipala243@gmail.com'
     },
     {
       icon: <Phone className="h-6 w-6 text-primary" />,
       title: 'Phone',
-      value: '+91 6301712297',
-      link: 'tel:+916301712297'
+      value: '+91 9515855262',
+      link: 'tel:+919515855262'
     },
     {
       icon: <MapPin className="h-6 w-6 text-primary" />,
       title: 'Location',
-      value: 'Visakhapatnam, India',
+      value: 'Bengaluru, Karnataka',
       link: '#'
     }
   ];
@@ -87,17 +81,12 @@ const Contact: React.FC = () => {
     {
       name: 'LinkedIn',
       icon: <Linkedin className="h-5 w-5" />,
-      url: 'https://www.linkedin.com/in/rakeshchikatla/'
+      url: 'https://www.linkedin.com/in/vamsi-pachipala-98a338209/'
     },
     {
       name: 'GitHub',
       icon: <Github className="h-5 w-5" />,
-      url: 'https://github.com/chikatlarakesh'
-    },
-    {
-      name: 'Linktree',
-      icon: <ExternalLink className="h-5 w-5" />,
-      url: 'https://linktr.ee/rakeshchikatla'
+      url: 'https://github.com/Vamsi-Pachipala'
     }
   ];
 
@@ -112,7 +101,7 @@ const Contact: React.FC = () => {
         >
           <h2 className="section-title">Get In Touch</h2>
           <p className="section-subtitle">
-            Feel free to reach out for collaboration, feedback, or just to say hello!
+            Feel free to reach out for collaboration, job opportunities, or just a tech chat!
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
@@ -127,9 +116,9 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <input type="hidden" name="contact-form" value="Contact Form" />
-                
+
                 <div>
-                  <label htmlFor="user_name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label htmlFor="user_name" className="block text-sm font-medium text-white mb-1">
                     Your Name
                   </label>
                   <input
@@ -139,13 +128,13 @@ const Contact: React.FC = () => {
                     value={formData.user_name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Enter your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label htmlFor="user_email" className="block text-sm font-medium text-white mb-1">
                     Your Email
                   </label>
                   <input
@@ -155,13 +144,13 @@ const Contact: React.FC = () => {
                     value={formData.user_email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Enter your email id"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Enter your email"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label htmlFor="subject" className="block text-sm font-medium text-white mb-1">
                     Subject
                   </label>
                   <input
@@ -171,13 +160,13 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card focus:outline-none focus:ring-2 focus:ring-primary"
-                    placeholder="Subject of your message"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Message subject"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-white mb-1">
                     Your Message
                   </label>
                   <textarea
@@ -187,7 +176,7 @@ const Contact: React.FC = () => {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark-card focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-600 bg-gray-800 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="Hello, I'd like to talk about..."
                   ></textarea>
                 </div>
@@ -199,7 +188,7 @@ const Contact: React.FC = () => {
               </form>
             </motion.div>
 
-            {/* Contact Info & Socials */}
+            {/* Contact Info & Social */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -212,12 +201,12 @@ const Contact: React.FC = () => {
                   <a
                     key={index}
                     href={info.link}
-                    className="card p-6 flex items-start space-x-4 hover:shadow-md transition-all duration-300"
+                    className="card p-6 flex items-start space-x-4 hover:shadow-md transition"
                   >
                     <div className="mt-1">{info.icon}</div>
                     <div>
                       <h4 className="font-bold">{info.title}</h4>
-                      <p className="text-gray-600 dark:text-gray-300">{info.value}</p>
+                      <p className="text-gray-400">{info.value}</p>
                     </div>
                   </a>
                 ))}
@@ -243,29 +232,16 @@ const Contact: React.FC = () => {
               <div className="card p-6">
                 <h4 className="font-bold mb-4">Availability</h4>
                 <ul className="space-y-2">
-                <li className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-green-500 mr-2"></div>
-                    <span>Internships</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-green-500 mr-2"></div>
-                    <span>Full-time opportunities</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-green-500 mr-2"></div>
-                    <span>Freelance projects</span>
-                  </li>
-                  <li className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-green-500 mr-2"></div>
-                    <span>Open source collaboration</span>
-                  </li>
+                  <li className="flex items-center"><div className="dot-green mr-2"></div>Full-time Opportunities</li>
+                  <li className="flex items-center"><div className="dot-green mr-2"></div>Freelance Projects</li>
+                  <li className="flex items-center"><div className="dot-green mr-2"></div>Open Source Collaboration</li>
                 </ul>
               </div>
 
               <div className="card p-6 bg-primary/10 border border-primary/20">
                 <h4 className="font-bold mb-2">Feedback Welcome</h4>
                 <p className="text-gray-700 dark:text-gray-300">
-                  Feel free to reach out for collaboration, feedback, or just to say hello!
+                  Whether it’s feedback, collaboration, or mentoring — always open to tech conversations.
                 </p>
               </div>
             </motion.div>

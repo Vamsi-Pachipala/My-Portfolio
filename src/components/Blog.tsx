@@ -5,28 +5,28 @@ const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "Mastering Dynamic Programming: A Step-by-Step Guide",
-      excerpt: "Learn how to approach dynamic programming problems with confidence and solve them efficiently.",
+      title: "Mastering Java Concurrency: From Threads to Executors",
+      excerpt: "Dive deep into Java concurrency tools and learn how to write efficient multi-threaded applications.",
       date: "Coming Soon",
-      minutesToRead: 12,
+      minutesToRead: 10,
       image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
       comingSoon: true
     },
     {
       id: 2,
-      title: "Building Scalable Frontend Applications with React",
-      excerpt: "Best practices for creating maintainable and scalable React applications that perform well.",
+      title: "Designing Scalable Microservices with Spring Boot",
+      excerpt: "Explore the architecture and best practices for building scalable microservices using Spring Boot.",
       date: "Coming Soon",
-      minutesToRead: 10,
-      image: "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg",
+      minutesToRead: 12,
+      image: "https://amigoscode.com/assets/thumbnails/courses/advanced-spring-boot.webp",
       comingSoon: true
     },
     {
       id: 3,
-      title: "My Experience Contributing to Open Source",
-      excerpt: "How I started contributing to open source projects and what I've learned along the way.",
+      title: "My Journey with System Design Interviews",
+      excerpt: "Insights, lessons, and real interview experience while preparing and cracking system design rounds.",
       date: "Coming Soon",
-      minutesToRead: 8,
+      minutesToRead: 9,
       image: "https://images.pexels.com/photos/4050291/pexels-photo-4050291.jpeg",
       comingSoon: true
     }
@@ -91,7 +91,7 @@ const Blog = () => {
                   
                   <div className="flex items-center">
                     <User className="h-4 w-4 mr-1" />
-                    <span>Rakesh Ch</span>
+                    <span>Vamsi Pachipala</span>
                   </div>
                 </div>
               </div>
