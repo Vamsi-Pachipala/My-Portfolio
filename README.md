@@ -1,16 +1,13 @@
-# 🚀 Vamsi Pachipala - Backend Developer Portfolio
+# 🚀 Vamsi Pachipala – Backend Developer Portfolio
 
-![GitHub Repo Stars](https://img.shields.io/github/stars/Vamsi-Pachipala/vamsi-portfolio?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/Vamsi-Pachipala/vamsi-portfolio?style=social)
-![GitHub License](https://img.shields.io/github/license/Vamsi-Pachipala/vamsi-portfolio)
 
-Welcome to my personal developer portfolio! This website highlights my journey, skills, side projects, and contact information. It's tailored to showcase my expertise as a **Backend Engineer**, **Microservices Architect**, and **System Design Enthusiast**.
+Welcome to my personal portfolio – designed to reflect my journey as a **Backend Engineer**, showcasing the tools I use, the systems I build, and how to reach out to me.
 
 ---
 
 ## 🔗 Live Demo
 
-🌐 [Visit My Portfolio](https://vamsi-pachipala.vercel.app/) *(update this if needed)*
+🌐 [Visit Portfolio](https://vamsi-pachipala.vercel.app)
 
 ---
 
@@ -18,28 +15,28 @@ Welcome to my personal developer portfolio! This website highlights my journey, 
 
 - **Frontend:** React, Tailwind CSS, Framer Motion, React Simple Typewriter  
 - **Routing:** React Scroll  
-- **State Management:** React Context API  
-- **Email Handling:** EmailJS (2-template system)  
+- **State Management:** Context API  
+- **Email Integration:** EmailJS (2-template auto-response system)  
 - **Icons:** Lucide React  
-- **Theme Support:** Dark + Midnight toggle  
+- **Themes:** Dark + Midnight theme toggle
 
 ---
 
 ## ✨ Features
 
-- 🧑‍💻 Backend-heavy skills showcased with filterable categories  
-- 🎯 Dynamic typewriter intro & scroll-down animation  
+- ⚙️ Backend skills showcased with filterable sections  
+- ✍️ Dynamic typewriter intro  
 - 🌌 Dark + Midnight theme toggle  
-- 📈 GitHub & LeetCode activity integrations  
-- 🧩 Modular and scalable component structure  
-- 💬 Contact form with auto-reply & email forwarding via EmailJS  
-- ⚙️ Fully responsive layout for mobile, tablet, and desktop  
+- 📈 LeetCode & GitHub activity integration  
+- 📱 Fully responsive design  
+- 📬 Contact form with auto-reply email setup via EmailJS  
+- 🧩 Modular, scalable codebase
 
 ---
 
 ## 🚀 Getting Started
 
-### 📦 Clone the Repo
+### 📦 Clone the Repository
 
 ```bash
 git clone https://github.com/Vamsi-Pachipala/vamsi-portfolio.git
