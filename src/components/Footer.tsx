@@ -17,7 +17,6 @@ const Footer = () => {
     { name: 'GitHub', url: 'https://github.com/Vamsi-Pachipala' },
     { name: 'LinkedIn', url: 'https://www.linkedin.com/in/vamsi-pachipala-98a338209/' },
     { name: 'Email', url: 'mailto:vamsipachipala243@gmail.com' },
-    { name: 'Portfolio', url: 'https://vamsip.dev' }
   ];
 
   return (
