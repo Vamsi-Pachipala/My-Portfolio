@@ -4,9 +4,9 @@ import { Code, Github, TrendingUp, Hash, CalendarDays } from 'lucide-react';
 const CodingJourney = () => {
   const stats = [
     { label: 'Problems Solved', value: '1000+', icon: <Hash className="h-6 w-6 text-primary" /> },
-    { label: 'Streak Days', value: '160+', icon: <CalendarDays className="h-6 w-6 text-accent" /> },
-    { label: 'Contests', value: '25+', icon: <TrendingUp className="h-6 w-6 text-accent2" /> },
-    { label: 'GitHub Repos', value: '20+', icon: <Github className="h-6 w-6 text-primary" /> },
+    { label: 'Streak Days', value: '150+', icon: <CalendarDays className="h-6 w-6 text-accent" /> },
+    { label: 'Contests', value: '20+', icon: <TrendingUp className="h-6 w-6 text-accent2" /> },
+    { label: 'GitHub Repos', value: '30+', icon: <Github className="h-6 w-6 text-primary" /> },
   ];
 
   const platforms = [
