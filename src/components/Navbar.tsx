@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { animateScroll as scroll, scroller } from 'react-scroll';
+import { scroller } from 'react-scroll';
 import { Menu, X, Moon, Sun, Code } from 'lucide-react';
 import { ThemeContext } from '../context/ThemeContext';
 
@@ -20,35 +20,19 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile nav is open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
-  }, [isOpen]);
-
-  // Auto-close mobile nav when user scrolls manually
-  useEffect(() => {
-    const handleScrollCloseMenu = () => {
-      if (isOpen) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener('scroll', handleScrollCloseMenu);
-    return () => window.removeEventListener('scroll', handleScrollCloseMenu);
+    return () => (document.body.style.overflow = 'auto');
   }, [isOpen]);
 
   return (
     <header
-      className={`fixed top-0 w-full z-40 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md shadow-md'
           : 'bg-transparent'
@@ -57,16 +41,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4 md:py-6">
           {/* Logo */}
-          <div
-            className="flex items-center space-x-2 text-xl font-bold text-primary cursor-pointer"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="flex items-center space-x-2 text-xl font-bold text-primary cursor-pointer">
             <Code className="h-6 w-6" />
             <span>Vamsi Pachipala</span>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-2">
+          {/* Desktop nav */}
+          <nav className="hidden md:flex space-x-4">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -84,13 +65,10 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Theme Toggle + Mobile Button */}
+          {/* Theme toggle + menu icon */}
           <div className="flex items-center space-x-3">
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleTheme();
-              }}
+              onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               aria-label="Toggle theme"
             >
@@ -101,47 +79,55 @@ const Navbar = () => {
               )}
             </button>
 
+            {/* Hamburger menu */}
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsOpen(!isOpen);
-              }}
+              onClick={() => setIsOpen(true)}
               className="md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              aria-label="Toggle menu"
+              aria-label="Open menu"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <Menu className="h-6 w-6" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu Overlay - Changed from top slide to side slide */}
       <div
-        id="mobile-nav"
-        className={`md:hidden fixed inset-0 z-30 bg-white dark:bg-dark-bg transform transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-y-0' : '-translate-y-full'
-        }`}
+        className={`fixed inset-0 z-50 bg-white dark:bg-dark-bg backdrop-blur-md transition-transform duration-300 ease-in-out
+        ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+        md:hidden`}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-6 text-lg px-4">
+        <div className="flex justify-between items-center px-6 py-4">
+          <span className="text-xl font-bold text-primary">Vamsi Pachipala</span>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800"
+            aria-label="Close menu"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+
+        <nav className="flex flex-col items-center justify-center mt-8 space-y-6 text-lg">
           {navLinks.map((link) => (
             <a
               key={link.name}
               onClick={() => {
-                setIsOpen(false); // Close first
+                setIsOpen(false);
                 setTimeout(() => {
                   scroller.scrollTo(link.to, {
                     smooth: true,
                     offset: link.offset,
                     duration: 500,
                   });
-                }, 300); // Wait for menu to animate out
+                }, 200);
               }}
-              className="w-full text-center py-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
+              className="cursor-pointer hover:text-primary transition-colors"
             >
               {link.name}
             </a>
           ))}
-        </div>
+        </nav>
       </div>
     </header>
   );
