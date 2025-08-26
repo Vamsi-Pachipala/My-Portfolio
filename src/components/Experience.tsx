@@ -10,7 +10,7 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: "B.Tech in Mechanical Engineering",
+      title: "Bachelor Of Technology",
       company: "Gayatri Vidya Parishad College of Engineering",
       date: "2020 – 2023",
       description: "Graduated with 8.61 CGPA. Focused on Data Structures, OOPs, Networking, and Java development.",
