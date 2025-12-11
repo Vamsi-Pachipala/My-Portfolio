@@ -59,14 +59,14 @@ const Hero = () => {
             </a>
 
             <a 
-              href="https://drive.google.com/file/d/19yEeo4R3P_AKTT-GkqNYNo-bD0O1fcJW" 
+              href="/Vamsi_Pachipala_CV_DEC_25.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary text-center"
-            >
+              className="btn-secondary text-center">
               <span>View Resume</span>
               <ExternalLink className="ml-2 h-5 w-5" />
             </a>
+
           </div>
         </motion.div>
       </div>
