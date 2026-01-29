@@ -37,8 +37,7 @@ const Skills = () => {
     { name: 'Kubernetes', proficiency: 80, category: 'tools', icon: <Wrench className="h-4 w-4" /> },
     { name: 'Git & GitHub', proficiency: 94, category: 'tools', icon: <GitBranch className="h-4 w-4" /> },
     { name: 'CI/CD (Jenkins/GitHub Actions)', proficiency: 84, category: 'tools', icon: <Terminal className="h-4 w-4" /> },
-    { name: 'SonarQube', proficiency: 78, category: 'tools', icon: <ShieldCheck className="h-4 w-4" /> },
-
+   
     // Core CS / Programming fundamentals
     { name: 'Data Structures', proficiency: 96, category: 'core', icon: <Code className="h-4 w-4" /> },
     { name: 'Algorithms', proficiency: 92, category: 'core', icon: <Code className="h-4 w-4" /> },
